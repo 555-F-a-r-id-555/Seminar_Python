@@ -64,5 +64,5 @@
 
 
 n, m, k = list(map(int, input('Введите числа в строку через пробел: ').split()))
-print(f'{n} {m} {k} ->','yes' if k % n == 0 or k % m == 0 else 'no')
+print(f'{n} {m} {k} ->', 'yes' if n * m > k and k % n == 0 or k % m == 0 else 'no')
 # print(n, m, k)
