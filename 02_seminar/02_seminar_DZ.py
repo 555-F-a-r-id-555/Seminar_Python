@@ -71,7 +71,7 @@ def func_eagle_tails(s_t_r='Задача 10 вариант №2 '):
 # 4 4 -> 2 2
 # 5 6 -> 2 3
 
-
+# 1 -Вариант
 def find_number(s_u_m, mult, s_t_r='Задача 12'):
     print(s_t_r)
     # s_u_m = int(input('Сумма чисел: '))
@@ -85,11 +85,17 @@ def find_number(s_u_m, mult, s_t_r='Задача 12'):
                 b_o_o_l = True
                 print(i, j)
                 break
+    else:
+        print(f'Решения нет')
 
 
 find_number(4, 4)
 find_number(5, 6)
 find_number(19, 90)
+find_number(2, 3)
+
+
+# 2 -вариант
 
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа
@@ -105,6 +111,5 @@ def print_2_k(s_t_r='Задача 14'):
         if num <= n:
             print(num, end=" ")
             num *= 2
-
 
 # print_2_k()
