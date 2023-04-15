@@ -28,27 +28,53 @@
 # Примечание: Пользователь может вводить значения
 # списка или список задан изначально.
 
+# 1
+num = [1, 2, 3, 4, 5]
+k = 2
+n = len(num)
+for i in range(n // 2):
+    temp = num[i]
+    num[i] = num[n - i - 1]
+    num[n - i - 1] = temp
 
-# num = [1, 2, 3, 4, 5]
-# k = 2
-# n = len(num)
-# for i in range(n // 2):
-#     temp = num[i]
-#     num[i] = num[n - i - 1]
-#     num[n - i - 1] = temp
-#
-# for i in range(k // 2):
-#     temp = num[i]
-#     num[i] = num[k - i - 1]
-#     num[k - i - 1] = temp
-# print(num)
-# for i in range(k, k + (n - k) // 2):
-#     # print(num[i], end=" ")
-#     temp = num[i]
-#     num[i] = num[n + k - i - 1]
-#     num[n + k - i - 1] = temp
-# print()
-# print(num)
+for i in range(k // 2):
+    temp = num[i]
+    num[i] = num[k - i - 1]
+    num[k - i - 1] = temp
+print(num)
+for i in range(k, k + (n - k) // 2):
+    # print(num[i], end=" ")
+    temp = num[i]
+    num[i] = num[n + k - i - 1]
+    num[n + k - i - 1] = temp
+print()
+print(num)
+
+# 2
+
+array1 = [1, 2, 3, 4, 5]
+k = 3
+for i in range(k):
+    for j in range(len(array1)):
+        # temp = array1[j]
+        # array1[j] = array1[-1]
+        # array1[-1] = temp
+        array1[j], array1[-1] = array1[-1], array1[j]
+
+print(array1)
+
+# 3
+
+array1 = [1, 2, 3, 4, 5]
+k = 2
+part1 = array1[-k:]
+# print(part1)
+part2 = array1[:-k]
+# print(part2)
+array1_2 = part1 + part2
+print(array1_2)
+
+# 4
 
 # def shift(lst, steps):
 #     if steps < 0:
@@ -86,7 +112,7 @@ print(x)
 
 
 
-# Дан массив, состоящий из целых чисел. Напишите
+# 23 Дан массив, состоящий из целых чисел. Напишите
 # программу, которая подсчитает количество
 # элементов массива, больших предыдущего (элемента
 # с предыдущим номером)

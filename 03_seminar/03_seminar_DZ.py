@@ -39,6 +39,7 @@ print(*(array1 := [(random.randint(1, 10)) for i in range(n)]), f'-> {array1.cou
 # 6
 # -> 5
 
+# 1- Вариант
 # import random
 
 n1 = int(input("Введите n1 = "))
@@ -54,6 +55,39 @@ for elem3 in array3[1:]:
         diff_min2 = diff2
         elem_min2 = elem3
 print(*array3, f'-> {elem_min2}')
+
+# 2 -Вариант
+
+# array3 = [161, 190, 151]
+# array3 = [145, 5, 7, 148]
+array3 = [145, 5, 7, 148, 161, 190, 153]
+x1 = 150
+diff_min1 = abs(x1 - array3[0])
+for elem3 in array3:
+    if elem3 < x1:
+        diff1 = abs(x1 - elem3)
+        if diff1 < diff_min1:
+            diff_min1 = diff1
+            closestLeft = elem3
+for elem4 in array3:
+    if elem4 != elem3 and elem4 > x1:
+        diff_min2 = abs(x1 - elem4)
+for elem5 in array3:
+    if elem5 > x1:
+        diff1 = abs(x1 - elem5)
+        if diff1 < diff_min2:
+            diff_min2 = diff1
+            closestRight = elem4
+
+try:
+    print(f'{closestLeft} ', end='')
+except NameError:
+    print('closestLeft - не существует ', end='')
+try:
+    print(f'< {x1} < {closestRight} ')
+except NameError:
+    print(f'< {x1} < closestRight - не существует')
+
 
 # Задача 20:  В настольной игре Скрабл (Scrabble) каждая буква имеет определенную
 # ценность. В случае с английским алфавитом очки распределяются так:
