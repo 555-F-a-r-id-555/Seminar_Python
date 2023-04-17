@@ -58,13 +58,13 @@ print(identical_elements)
 # 4. Создайте список из случайных чисел.
 # Найдите количество различных элементов в нем.
 
-# list2 = [random.randint(0, 10) for _ in range(0, 10)]
-#
-# print(list2)
-# l2 = set()
-# for i in range(len(list2)):
-#     if list2[i] in list2[i + 1:]:
-#         l2.add(list2[i])
-# print('общее количество элементов', set(list2))
-# print('совподающие элементы: ', set(l2))
-# print('количество не совподающих элементов: ', len(set(list2)) - len(l2))
+list2 = [random.randint(0, 10) for _ in range(0, 10)]
+
+print(list2)
+l2 = set()
+for i in range(len(list2)):
+    if list2[i] in list2[i + 1:]:
+        l2.add(list2[i])
+print('общее количество элементов', set(list2))
+print('совподающие элементы: ', set(l2))
+print('количество не совподающих элементов: ', len(set(list2)) - len(l2))
