@@ -88,6 +88,15 @@ try:
 except NameError:
     print(f'< {x1} < closestRight - не существует')
 
+# 3
+
+n = int(input('Введите длину массива: '))
+x = int(input('введите искомое значение: '))
+array3 = [random.randint(-10, 10) for i in range(n)]
+print(array3)
+array3.append(x)
+array3.sort()
+print(f'{array3[array3.index(x) - 1]} < {array3[array3.index(x)]} < {array3[array3.index(x) + 1]}')
 
 # Задача 20:  В настольной игре Скрабл (Scrabble) каждая буква имеет определенную
 # ценность. В случае с английским алфавитом очки распределяются так:
@@ -138,4 +147,3 @@ for elem in string:
         if elem == key:
             score += dictionary[key]
 print(score)
-
