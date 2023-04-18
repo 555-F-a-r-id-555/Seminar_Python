@@ -6,15 +6,15 @@
 
 import random
 
-# list1 = [random.randint(0, 10) for _ in range(0, 10)]
-# print(list1)
-#
-# for i in range(len(list1) -2, -1, -1):
-#     print(list1[i], end=' ')
-#     print()
-#     if list1[i - 1] < list1[i] > list1[i + 1]:
-#         print(f'{i} - номер, {list1[i]} - элемента')
-#         break
+list1 = [random.randint(0, 10) for _ in range(0, 10)]
+print(list1)
+
+for i in range(len(list1) -2, -1, -1):
+    print(list1[i], end=' ')
+    print()
+    if list1[i - 1] < list1[i] > list1[i + 1]:
+        print(f'{i} - номер, {list1[i]} - элемента')
+        break
 
 # 2. Создайте список из случайных чисел.
 # Найдите максимальное количество его одинаковых элементов.
