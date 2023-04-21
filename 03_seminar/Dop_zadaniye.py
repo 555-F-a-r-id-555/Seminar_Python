@@ -38,10 +38,11 @@ def func_intersection(l1, l2):
     for elem1 in l1:
         if elem1 in l2:
             list3.append(elem1)
+    print(list3)
     return list3
 
 
-print(func_intersection(list1, list2))
+func_intersection(list1, list2)
 
 # 3 Sample Input:
 # ["eat", "tea", "tan", "ate", "nat", “bat"]
