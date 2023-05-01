@@ -177,7 +177,7 @@ def nod(n1, n2, temp):
         return NOD(n1, n2, temp - 1)
 
 
-print('NOD = ',nod(n1, n2, temp))
+print('NOD = ', nod(n1, n2, temp))
 
 
 # Разбиение числа на сумму слагаемых.
@@ -185,7 +185,7 @@ print('NOD = ',nod(n1, n2, temp))
 # с помощью рекурсии. Например,
 # число 4 можно разбить на сумму слагаемых 1+1+1+1, 1+1+2, 2+2 и 4.
 
-
+# 1 - Вариант
 def sum_num(n, temp=[]):
     if n == 0:
         print(*temp)
@@ -198,3 +198,16 @@ def sum_num(n, temp=[]):
 
 
 sum_num(4)
+
+
+# 2 - Вариант
+def split_sum(n, current_sum=[], start=1):
+    if n == 0:
+        print('+'.join(map(str, current_sum)))
+
+    else:
+        for i in range(start, n + 1):
+            split_sum(n - i, current_sum + [i], i)
+
+
+split_sum(5)
