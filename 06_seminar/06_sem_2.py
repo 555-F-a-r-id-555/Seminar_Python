@@ -7,8 +7,8 @@
 #     return 'yes' if d * d > n else 'no'
 
 
-def prime(n, d = 2):
-    if d*d >= n:
+def prime(n, d=2):
+    if d * d >= n:
         # print('prime number')
         return True
     elif n == 2:
@@ -18,12 +18,31 @@ def prime(n, d = 2):
         return False
     else:
         # print('prime')
-        return prime(n , d+1)
+        return prime(n, d + 1)
 
 
 print(prime(57))
 
 
+# 2 - Версия
+
+def is_prime(num, i=2):
+    if num < 2:
+        return False
+    elif i == num:
+        return True
+    elif num % i == 0:
+        return False
+    else:
+        return is_prime(num, i + 1)
+
+
+print(is_prime(17))  # Output: True
+
+
+# эта функция не самая оптимальная
+# с точки зрения производительности, и для больших чисел возможно,
+# что программа будет выполняться слишком долго.
 
 # палиндром или нет рекурсией
 
@@ -40,7 +59,6 @@ print(prime(57))
 # reverse(5, n)
 #
 # def pol(revers,n,k =0):
-
 
 
 # def lst_print(n, lst, k=0):
