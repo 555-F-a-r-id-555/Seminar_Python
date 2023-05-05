@@ -43,16 +43,16 @@ find_index()
 # и если в ней присутствует слово "anton" (необязательно рядом стоящие буквы,
 # главное наличие последовательности букв), то холодильник заражен и нужно вывести номер холодильника,
 # нумерация начинается с единицы
-
+#
 # Формат входных данных
 # В первой строке подаётся число n – количество холодильников. В последующих
 # n строках вводятся строки, содержащие латинские строчные буквы и цифры, в каждой строке от
 # 5 до 100 символов.
-
+#
 # Формат выходных данных
 # Программа должна вывести номера зараженных холодильников через пробел.
 # Если таких холодильников нет, ничего выводить не нужно.
-
+#
 # Sample Input 1:
 # 6
 # 222anton456
@@ -111,6 +111,88 @@ lst = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen',
        'antoooooooooooooooooooooooooooooooooooooooooooooooooooon',
        'unton']
 Anton(9, lst)
+
+
+# 2 - Вариант важна последовательность
+def a_n_t_o_n(n, lst):
+    answer = []
+    for i in range(n):
+        temp = ''
+        p = 0
+        for k in 'anton':
+            res =lst[i].find(k,p)
+            if res != -1:
+                p = res
+                temp+=k
+        # print(i,temp)
+        if temp == 'anton':
+            answer.append(i + 1)
+    print('Номера,веселых холодильников: ', *answer)
+
+lst = ['a_n_t_o_n',
+       't_o_n_a_n',
+       't_a_n_o_n',
+       't_a_n_o_s']
+a_n_t_o_n(4, lst)
+lst = ['222anton456',
+       'a1n1t1o1n1',
+       '0000a0000n00t00000o000000n',
+       'gylfole',
+       'richard',
+       'ant0n']
+a_n_t_o_n(6, lst)
+
+lst = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen',
+       'anton',
+       'aoooooooooontooooo',
+       'elelelelelelelelelel',
+       'ntoneeee',
+       'tonee',
+       '253235235a5323352n25235352t253523523235oo235523523523n',
+       'antoooooooooooooooooooooooooooooooooooooooooooooooooooon',
+       'unton']
+a_n_t_o_n(9, lst)
+
+# 3 - Вариант важна последовательность
+
+# import re
+
+# text ='a_n_t_o_n'
+# re_0 = re.findall(r'^a.n.t.o.n$',text)[0]
+# print(re_0)
+
+# def a_n_t_o_n_2(n, lst):
+#     answer = []
+#     for i in range(n):
+#         if re.findall(r'a\wn\wt\wo\wn', lst[i]) != [] or re.findall(r'^\wa\wn\wt\wo\wn\w+$', lst[i]) != []:
+#             answer.append(i + 1)
+#     print('Вот такие вот, номера холодильников: ', *answer)
+#
+#
+# lst = ['a_n_t_o_n',
+#        't_o_n_a_n',
+#        't_a_n_o_n',
+#        't_a_n_o_s']
+# a_n_t_o_n_2(4, lst)
+#
+# lst = ['222anton456',
+#        'a1n1t1o1n1',
+#        '0000a0000n00t00000o000000n',
+#        'gylfole',
+#        'richard',
+#        'ant0n']
+# a_n_t_o_n_2(6, lst)
+#
+# lst = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen',
+#        'anton',
+#        'aoooooooooontooooo',
+#        'elelelelelelelelelel',
+#        'ntoneeee',
+#        'tonee',
+#        '253235235a5323352n25235352t253523523235oo235523523523n',
+#        'antoooooooooooooooooooooooooooooooooooooooooooooooooooon',
+#        'unton']
+# a_n_t_o_n_2(9, lst)
 
 
 # рекурсия
