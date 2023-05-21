@@ -61,6 +61,18 @@ def find_farthest_orbit(list_of_orbits):
 orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
 print(*find_farthest_orbit(orbits))
 
+
+def find_farthest_orbit_2(list_of_orbits):
+    return max(list_of_orbits, key=lambda x: (x[0] != x[1]) * x[0] * x[1])
+
+
+print(*find_farthest_orbit_2(orbits))
+
+l = [1, 2, 3, 4, 5]
+print(sorted(orbits, key=lambda x: x[0] > x[1]))
+
+print(sorted(l, key=lambda x: x % 2 == 0))
+
 # Задача №51. Решение в группах
 # Напишите функцию same_by(characteristic, objects), которая
 # проверяет, все ли объекты имеют одинаковое значение
@@ -98,3 +110,76 @@ def same_by(characteristic, objects):
 characteristics = lambda x: x % 2
 values = [0, 2, 10, 6]
 same_by(characteristics, values)
+
+
+def same_by(characteristic, objects):
+    if len(list(filter(lambda x: characteristic(x) == 0, objects))) == len(objects):
+        print('same')
+    else:
+        print('different')
+
+
+def func(x):
+    return x % 2
+
+
+characteristics = lambda x: x % 2
+values = [0, 2, 10, 6]
+same_by(func, values)
+
+
+# ---------------------------------------------
+
+
+def test(x):
+    return lambda n: n % x == 0
+
+
+fun = test(2)
+print(func(8))
+
+
+def test2(x):
+    def test3(n):
+        return n % x == 0
+
+    return test3
+
+
+fun2 = test2(2)
+print(fun2(8))
+
+some_list = [1, 2, 3, 45]
+other_list = ['a', 'b', 'c', 'd']
+
+print(tuple(zip(other_list, some_list)))
+dict_1 = dict(zip(other_list, some_list))
+print(*dict(zip(other_list, some_list)))
+
+
+def f(a, b, c, d):
+    return a + b + c + d
+
+
+print(f(**dict_1))
+
+
+def f_2(**kwargs):
+    print(kwargs)
+
+
+f_2(a=4, b=7, c=5)
+
+
+def f_3(*args):
+    return sum(args)
+
+
+print(f_3(1, 2, 3, 4, 5))
+
+from collections import defaultdict
+
+d = defaultdict(int)
+d['a'] += 1
+print(d)
+
